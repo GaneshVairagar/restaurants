@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Sahyadri Veg</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.jpg"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/themify/themify-icons.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/lightbox2/css/lightbox.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+
+</head>
+<body class="animsition">
+
+
+	<!-- Header -->
+    <header>
+        <!-- Header desktop -->
+        <div class="wrap-menu-header gradient1 trans-0-4">
+            <div class="container h-full">
+                <div class="wrap_header trans-0-3">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="images/icons/logo3.jpg" alt="Logo" data-logofixed="images/icons/logo3.jpg">
+                        </a>
+                    </div>
+    
+                    <!-- Menu -->
+                    <nav class="menu wrap_menu p-l-45 p-l-0-xl">
+                        <ul class="main_menu">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="reservation.html">Reservation</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="https://www.zomato.com/pune/sahyadri-veg-3-chinchwad/order" target="_blank">Order</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+    
+                    <!-- Social & Sidebar -->
+                    <div class="social flex-w flex-l-m p-r-20">
+                        <a href="https://wa.me/9921183970?text=Hello%20I%20am%20interested%20in%20your%20services!" target="_blank">
+                            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sahyadri_veg/profilecard/?igsh=MW5sZmk1N2h3czY5eg%3D%3D" target="_blank">
+                            <i class="fa fa-facebook m-l-21" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sahyadri_veg/profilecard/?igsh=MW5sZmk1N2h3czY5eg%3D%3D" target="_blank">
+                            <i class="fa fa-instagram m-l-21" aria-hidden="true"></i>
+                        </a>
+                        <button class="btn-show-sidebar m-l-33 trans-0-4"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    
+        <!-- Sidebar -->
+    <aside class="sidebar trans-0-4">
+        <!-- Close Button -->
+        <button class="btn-hide-sidebar ti-close color0-hov trans-0-4"></button>
+    
+        <!-- Menu Sidebar -->
+        <nav class="menu-sidebar p-t-95 p-b-70">
+            <ul>
+                <li class="t-center m-b-13"><a href="index.html" class="txt19">Home</a></li>
+                <li class="t-center m-b-13"><a href="menu.html" class="txt19">Menu</a></li>
+                <li class="t-center m-b-13"><a href="gallery.html" class="txt19">Gallery</a></li>
+                <li class="t-center m-b-13"><a href="about.html" class="txt19">About</a></li>
+                <li class="t-center m-b-13"><a href="#" class="txt19">Blog</a></li>
+                <li class="t-center m-b-33"><a href="contact.html" class="txt19">Contact</a></li>
+                <li class="t-center">
+                    <a href="reservation.html" class="btn3 flex-c-m size13 txt11 trans-0-4 m-l-r-auto">Reservation</a>
+                </li>
+            </ul>
+        </nav>
+    
+        <!-- Gallery Section -->
+        <section class="gallery-sidebar t-center p-l-60 p-r-60 p-b-40">
+            <h4 class="txt20 m-b-33">Gallery</h4>
+            <div class="wrap-gallery-sidebar flex-w" id="gallery-container"></div>
+        </section>
+    </aside>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const galleryContainer = document.getElementById("gallery-container");
+            const galleryImages = [1, 2, 3, 5, 6, 7, 9, 10, 11];
+    
+            galleryImages.forEach((i) => {
+                const formattedIndex = i < 10 ? `0${i}` : i;
+                const galleryItem = `
+                    <a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-${formattedIndex}.jpg" data-lightbox="gallery-footer">
+                        <img src="images/photo-gallery-thumb-${formattedIndex}.jpg" alt="Gallery">
+                    </a>`;
+                galleryContainer.insertAdjacentHTML("beforeend", galleryItem);
+            });
+        });
+    </script>
+    
+    
+        <!-- Slide1 -->
+        <section class="section-slide">
+            <div class="wrap-slick1">
+                <div class="slick1">
+                    <div class="item-slick1 item1-slick1" style="background-image: url(images/slide1-001.jpg);">
+                        <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
+                            <span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="fadeInDown">
+                                Welcome to
+                            </span>
+    
+                            <h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
+                                Sahyadri Veg
+                            </h2>
+    
+                            <div class="wrap-btn-slide1 animated visible-false" data-appear="zoomIn">
+                                <!-- Button1 -->
+                                <a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
+                                    Look Menu
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="item-slick1 item2-slick1" style="background-image: url(images/master-slides-02.jpg);">
+                        <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
+                            <span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="rollIn">
+                                Welcome to
+                            </span>
+    
+                            <h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="lightSpeedIn">
+                                Sahyadri Veg
+                            </h2>
+    
+                            <div class="wrap-btn-slide1 animated visible-false" data-appear="slideInUp">
+                                <!-- Button1 -->
+                                <a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
+                                    Look Menu
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="item-slick1 item3-slick1" style="background-image: url(images/master-slides-01.jpg);">
+                        <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
+                            <span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="rotateInDownLeft">
+                                Welcome to
+                            </span>
+    
+                            <h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="rotateInUpRight">
+                                Sahyadri Veg 
+                            </h2>
+    
+                            <div class="wrap-btn-slide1 animated visible-false" data-appear="rotateIn">
+                                <!-- Button1 -->
+                                <a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
+                                    Look Menu
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <div class="wrap-slick1-dots"></div>
+            </div>
+        </section>
+
+
+
+
+	<!-- Welcome -->
+<section class="section-welcome bg1-pattern p-t-120 p-b-105">
+    <div class="container">
+        <div class="row">
+            <!-- Welcome Text Section -->
+            <div class="col-md-6 p-t-45 p-b-30">
+                <div class="wrap-text-welcome t-center">
+                    <!-- Title -->
+                    <span class="tit2 t-center">Multicuisine Restaurant</span>
+                    <h3 class="tit3 t-center m-b-35 m-t-5">Welcome</h3>
+
+                    <!-- Description -->
+                    <p class="t-center m-b-22 size3 m-l-r-auto">
+                        {{ text.description }}
+                    </p>
+
+                    <!-- Story Link -->
+                    <a href="about.html" class="txt4">
+                        Our Story
+                        <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Image Section -->
+            <div class="col-md-6 p-b-30">
+                <div class="wrap-pic-welcome size2 bo-rad-10 hov-img-zoom m-l-r-auto">
+                    <img src="{{ text.image }}" alt="IMG-OUR">
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+</section>
+ <script>
+	const text = {
+		description: "Savor the world on a plate! From authentic South Indian spices to classic Indian curries, sizzling Chinese delicacies, smoky Tandoor delights, and irresistible fast food favorites—our multicuisine menu promises a feast for every craving!",
+		image: "images/our-story-01.jpg",
+	};
+	document.querySelector('.wrap-text-welcome p').textContent = text.description;
+	document.querySelector('.wrap-pic-welcome img').src = text.image;
+ </script>
+<!--intro-->
+<section class="section-intro">
+    <!-- Header Section -->
+    <div class="header-intro parallax100 t-center p-t-135 p-b-158" id="intro-header" style="">
+        <span class="tit2 p-l-15 p-r-15" id="intro-header-subtitle"></span>
+        <h3 class="tit4 t-center p-l-15 p-r-15 p-t-3" id="intro-header-title"></h3>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content-intro bg-white p-t-77 p-b-133">
+        <div class="container">
+            <div class="row" id="intro-cards-container">
+                <!-- Cards will be populated here dynamically -->
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    // Data for dynamic content
+    const introData = {
+        header: {
+            backgroundImage: "images/bg-intro-01.jpg",
+            subtitle: "Discover",
+            title: "Sahyadri Veg",
+        },
+        cards: [
+            {
+                image: "images/intro-01.jpg",
+                title: "Romantic Restaurant",
+                description: "Where love meets flavor! Our cozy, romantic ambiance and family-friendly charm create the perfect setting to savor delicious meals and unforgettable moments with your loved ones.",
+                link: "#",
+                linkText: "Learn More",
+            },
+            {
+                image: "images/intro-02.jpg",
+                title: "Delicious Food",
+                description: "Indulge in a world of flavors with every bite! Our dishes are crafted to delight your taste buds and leave you craving for more.",
+                link: "#",
+                linkText: "Learn More",
+            },
+            {
+                image: "images/intro-04.jpg",
+                title: "Mocktail You Love",
+                description: "Experience a burst of colors and flavors with our vibrant mocktails! From zesty citrus blends to tropical fruity infusions, each sip is a refreshing escape that dazzles both the eyes and palate.",
+                link: "#",
+                linkText: "Learn More",
+            },
+        ],
+    };
+
+    // Populate header content
+    const headerSection = document.getElementById("intro-header");
+    headerSection.style.backgroundImage = `url(${introData.header.backgroundImage})`;
+    document.getElementById("intro-header-subtitle").textContent = introData.header.subtitle;
+    document.getElementById("intro-header-title").textContent = introData.header.title;
+
+    // Populate cards
+    const cardsContainer = document.getElementById("intro-cards-container");
+    introData.cards.forEach((card) => {
+        const cardHtml = `
+            <div class="col-md-4 p-t-30">
+                <div class="blo1">
+                    <div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom">
+                        <a href="${card.link}"><img src="${card.image}" alt="IMG-INTRO"></a>
+                    </div>
+                    <div class="wrap-text-blo1 p-t-35">
+                        <a href="${card.link}"><h4 class="txt5 color0-hov trans-0-4 m-b-13">${card.title}</h4></a>
+                        <p class="m-b-20">${card.description}</p>
+                        <a href="${card.link}" class="txt4">
+                            ${card.linkText}
+                            <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+        cardsContainer.insertAdjacentHTML("beforeend", cardHtml);
+    });
+</script>
+
+	
+  
+
+
+<!-- video-->
+<section class="section-video parallax100" id="video-section" style="">
+    <div class="content-video t-center p-t-225 p-b-250">
+        <span class="tit2 p-l-15 p-r-15" id="video-subtitle"></span>
+        <h3 class="tit4 t-center p-l-15 p-r-15 p-t-3" id="video-title"></h3>
+        <div class="btn-play ab-center size16 hov-pointer m-l-r-auto m-t-43 m-b-33" id="play-button" data-toggle="modal" data-target="#modal-video-01">
+            <div class="flex-c-m sizefull bo-cir bgwhite color1 hov1 trans-0-4">
+                <i class="fa fa-play fs-18 m-l-2" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    // Data for the video section
+    const videoData = {
+        backgroundImage: "images/bg-cover-video-02.jpg",
+        subtitle: "Discover",
+        title: "Our Video",
+        modalTarget: "#modal-video-01", // Can be used dynamically if required
+    };
+
+    // Populate the video section dynamically
+    const videoSection = document.getElementById("video-section");
+    videoSection.style.backgroundImage = `url(${videoData.backgroundImage})`;
+
+    document.getElementById("video-subtitle").textContent = videoData.subtitle;
+    document.getElementById("video-title").textContent = videoData.title;
+
+    const playButton = document.getElementById("play-button");
+    playButton.setAttribute("data-target", videoData.modalTarget);
+</script>
+
+
+
+	<!-- Our menu -->
+	<section class="section-ourmenu bg2-pattern p-t-115 p-b-120">
+		<div class="container">
+			<div class="title-section-ourmenu t-center m-b-22">
+				<span class="tit2 t-center">
+					Discover
+				</span>
+
+				<h3 class="tit5 t-center m-t-2">
+					Our Menu
+				</h3>
+			</div>
+
+			<div class="row">
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-sm-6">
+							<!-- Item our menu -->
+							<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
+								<img src="images/our-menu-01.jpg" alt="IMG-MENU">
+
+								<!-- Button2 -->
+								<a href="menu.html" class="btn2 flex-c-m txt5 ab-c-m size4">
+									Lunch
+								</a>
+							</div>
+						</div>
+
+						<div class="col-sm-6">
+							<!-- Item our menu -->
+							<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
+								<img src="images/our-menu-05.jpg" alt="IMG-MENU">
+
+								<!-- Button2 -->
+								<a href="menu.html" class="btn2 flex-c-m txt5 ab-c-m size5">
+									Dinner
+								</a>
+							</div>
+						</div>
+
+						<div class="col-12">
+							<!-- Item our menu -->
+							<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
+								<img src="images/our-menu-13.jpg" alt="IMG-MENU">
+
+								<!-- Button2 -->
+								<a href="menu.html" class="btn2 flex-c-m txt5 ab-c-m size6">
+									Desert
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="row">
+						<div class="col-12">
+							<!-- Item our menu -->
+							<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
+								<img src="images/our-menu-08.jpg" alt="IMG-MENU">
+
+								<!-- Button2 -->
+								<a href="menu.html" class="btn2 flex-c-m txt5 ab-c-m size7">
+									Breakfast
+								</a>
+							</div>
+						</div>
+
+						<div class="col-12">
+							<!-- Item our menu -->
+							<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
+								<img src="images/our-menu-10.jpg" alt="IMG-MENU">
+
+								<!-- Button2 -->
+								<a href="menu.html" class="btn2 flex-c-m txt5 ab-c-m size8">
+									Starters
+								</a>
+							</div>
+						</div>
+
+						<div class="col-12">
+							<!-- Item our menu -->
+							<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
+								<img src="images/our-menu-16.jpg" alt="IMG-MENU">
+
+								<!-- Button2 -->
+								<a href="menu.html " class="btn2 flex-c-m txt5 ab-c-m size9">
+									Mocktails
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<!-- Blog -->
+	<section class="section-blog bg-white p-t-115 p-b-123" id="blog-section">
+		<div class="container">
+			<div class="title-section-ourmenu t-center m-b-22">
+				<span class="tit2 t-center" id="blog-subtitle"></span>
+				<h3 class="tit5 t-center m-t-2" id="blog-title"></h3>
+			</div>
+			<div class="row" id="blog-entries"></div>
+		</div>
+	</section>
+	<script>
+		// Data for the blog section
+		const blogData = {
+			title: "For The",
+			subtitle: "Best Place",
+			posts: [
+				{
+					title: "Corporate Party",
+					image: "images/blog-01.jpg",
+					rating: "⭐⭐⭐⭐⭐",
+					description: "Celebrate milestones, achievements, or annual gatherings in style with a private dining experience, customized menus, and professional service.",
+					link: "blog-detail.html"
+				},
+				{
+					title: "Birthday Party",
+					image: "images/blog-02.jpg",
+					rating: "⭐⭐⭐⭐⭐",
+					description: "Treat yourself and your guests to an unforgettable birthday celebration at Sahyadri Veg. Savor mouthwatering dishes and enjoy a lively setting perfect for creating memories!",
+					link: "blog-detail.html"
+				},
+				{
+					title: "Wedding Party",
+					image: "images/blog-03.jpg",
+					rating: "⭐⭐⭐⭐⭐",
+					description: "Kick off your wedding festivities with a charming brunch party. Savor an array of breakfast and lunch favorites, surrounded by the people who matter most.",
+					link: "blog-detail.html"
+				}
+			]
+		};
+	
+		// Populate title and subtitle
+		document.getElementById("blog-title").textContent = blogData.title;
+		document.getElementById("blog-subtitle").textContent = blogData.subtitle;
+	
+		// Generate blog entries dynamically
+		const blogContainer = document.getElementById("blog-entries");
+		blogData.posts.forEach(post => {
+			const postHTML = `
+				<div class="col-md-4 p-t-30">
+					<div class="blo1">
+						<div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom pos-relative">
+							<a href="${post.link}"><img src="${post.image}" alt="IMG-BLOG"></a>
+							<div class="time-blog">${post.rating}</div>
+						</div>
+						<div class="wrap-text-blo1 p-t-35">
+							<a href="${post.link}">
+								<h4 class="txt5 color0-hov trans-0-4 m-b-13">${post.title}</h4>
+							</a>
+							<p class="m-b-20">${post.description}</p>
+							<a href="${post.link}" class="txt4">
+								Continue Reading
+								<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			`;
+			blogContainer.innerHTML += postHTML;
+		});
+	</script>
+		
+
+
+	<!-- Event -->
+	<section class="section-event">
+		<div class="wrap-slick2">
+			<div class="slick2" id="event-slides">
+				<!-- Dynamic content will be inserted here -->
+			</div>
+			<div class="wrap-slick2-dots"></div>
+		</div>
+	</section>
+	<script>
+		// Data for the event section
+		const eventData = [
+			{
+				backgroundImage: "images/bg-event-01.jpg",
+				title: "Upcoming",
+				subtitle: "Events",
+				event: {
+					image: "images/event-02.jpg",
+					time: "06:00 PM Monday - 25 November 2024",
+					title: "Birthday Party specific nights",
+					description: "Celebrate your special day in style! Our restaurant offers the perfect setting for a memorable birthday party, complete with delicious food, vibrant décor, and unforgettable moments.",
+					countdown: { days: 25, hours: 12, minutes: 59, seconds: 56 },
+					link: "#"
+				}
+			},
+			{
+				backgroundImage: "images/bg-event-02.jpg",
+				title: "Upcoming",
+				subtitle: "Events",
+				event: {
+					image: "images/event-06.jpg",
+					time: "08:00 PM Tuesday - 20 December 2024",
+					title: "Wedding Party specific nights",
+					description: "Donec quis lorem nulla. Nunc eu odio mi. Morbi nec lobortis est. Sed fringilla, nunc sed imperdiet lacinia.",
+					countdown: { days: 30, hours: 15, minutes: 45, seconds: 20 },
+					link: "#"
+				}
+			},
+			{
+				backgroundImage: "images/bg-event-04.jpg",
+				title: "Upcoming",
+				subtitle: "Events",
+				event: {
+					image: "images/event-01.jpg",
+					time: "08:00 PM Tuesday - 21 November 2024",
+					title: "Office Party specific nights",
+					description: "Donec quis lorem nulla. Nunc eu odio mi. Morbi nec lobortis est. Sed fringilla, nunc sed imperdiet lacinia.",
+					countdown: { days: 10, hours: 5, minutes: 30, seconds: 15 },
+					link: "#"
+				}
+			}
+		];
+	
+		// Function to generate the event blocks dynamically
+		const generateEventBlocks = () => {
+			const slidesContainer = document.getElementById("event-slides");
+	
+			eventData.forEach(event => {
+				const eventHTML = `
+					<div class="item-slick2" style="background-image: url(${event.backgroundImage});">
+						<div class="wrap-content-slide2 p-t-115 p-b-208">
+							<div class="container">
+								<div class="title-event t-center m-b-52">
+									<span class="tit2 p-l-15 p-r-15">${event.title}</span>
+									<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3">${event.subtitle}</h3>
+								</div>
+								<div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="zoomIn">
+									<a href="${event.event.link}" class="wrap-pic-blo2" style="background-image: url(${event.event.image});">
+										<div class="time-event size10 txt6 effect1">
+											<span class="txt-effect1 flex-c-m t-center">${event.event.time}</span>
+										</div>
+									</a>
+									<div class="wrap-text-blo2 flex-col-c-m p-l-40 p-r-40 p-t-45 p-b-30">
+										<h4 class="tit7 t-center m-b-10">${event.event.title}</h4>
+										<p class="t-center">${event.event.description}</p>
+										<div class="flex-sa-m flex-w w-full m-t-40">
+											<div class="size11 flex-col-c-m">
+												<span class="dis-block t-center txt7 m-b-2">${event.event.countdown.days}</span>
+												<span class="dis-block t-center txt8">Days</span>
+											</div>
+											<div class="size11 flex-col-c-m">
+												<span class="dis-block t-center txt7 m-b-2">${event.event.countdown.hours}</span>
+												<span class="dis-block t-center txt8">Hours</span>
+											</div>
+											<div class="size11 flex-col-c-m">
+												<span class="dis-block t-center txt7 m-b-2">${event.event.countdown.minutes}</span>
+												<span class="dis-block t-center txt8">Minutes</span>
+											</div>
+											<div class="size11 flex-col-c-m">
+												<span class="dis-block t-center txt7 m-b-2">${event.event.countdown.seconds}</span>
+												<span class="dis-block t-center txt8">Seconds</span>
+											</div>
+										</div>
+										<a href="${event.event.link}" class="txt4 m-t-40">
+											View Details
+											<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				`;
+				slidesContainer.innerHTML += eventHTML;
+			});
+		};
+	
+		// Call the function to populate the events dynamically
+		generateEventBlocks();
+	</script>
+	
+
+
+	<!-- Booking -->
+	<section class="section-booking bg1-pattern p-t-100 p-b-110">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 p-b-30">
+					<div class="t-center">
+						<span class="tit2 t-center">
+							Reservation
+						</span>
+
+						<h3 class="tit3 t-center m-b-35 m-t-2">
+							Book table
+						</h3>
+					</div>
+
+					<form class="wrap-form-booking">
+						<div class="row">
+							<div class="col-md-6">
+								<!-- Date -->
+								<span class="txt9">
+									Date
+								</span>
+
+								<div class="wrap-inputdate pos-relative txt10 size12 bo2 bo-rad-10 m-t-3 m-b-23">
+									<input class="my-calendar bo-rad-10 sizefull txt10 p-l-20" type="text" name="date">
+									<i class="btn-calendar fa fa-calendar ab-r-m hov-pointer m-r-18" aria-hidden="true"></i>
+								</div>
+
+								<!-- Time -->
+								<span class="txt9">
+									Time
+								</span>
+
+								<div class="wrap-inputtime size12 bo2 bo-rad-10 m-t-3 m-b-23">
+									<!-- Select2 -->
+									<select class="selection-1" name="time">
+										<option>9:00</option>
+										<option>9:30</option>
+										<option>10:00</option>
+										<option>10:30</option>
+										<option>11:00</option>
+										<option>11:30</option>
+										<option>12:00</option>
+										<option>12:30</option>
+										<option>13:00</option>
+										<option>13:30</option>
+										<option>14:00</option>
+										<option>14:30</option>
+										<option>15:00</option>
+										<option>15:30</option>
+										<option>16:00</option>
+										<option>16:30</option>
+										<option>17:00</option>
+										<option>17:30</option>
+										<option>18:00</option>
+									</select>
+								</div>
+
+								<!-- People -->
+								<span class="txt9">
+									People
+								</span>
+
+								<div class="wrap-inputpeople size12 bo2 bo-rad-10 m-t-3 m-b-23">
+									<!-- Select2 -->
+									<select class="selection-1" name="people">
+										<option>1 person</option>
+										<option>2 people</option>
+										<option>3 people</option>
+										<option>4 people</option>
+										<option>5 people</option>
+										<option>6 people</option>
+										<option>7 people</option>
+										<option>8 people</option>
+										<option>9 people</option>
+										<option>10 people</option>
+										<option>11 people</option>
+										<option>12 people</option>
+										<option>13 person</option>
+										<option>14 people</option>
+										<option>15 people</option>
+										<option>16 people</option>
+										<option>17 people</option>
+										<option>18 people</option>
+										<option>19 people</option>
+										<option>20 people</option>
+										<option>21 people</option>
+										<option>22 people</option>
+										<option>23 people</option>
+										<option>24 people</option>
+										<option>25 people</option>
+										<option>26 people</option>
+										<option>27 people</option>
+										<option>28 person</option>
+										<option>29 people</option>
+										<option>30 people</option>
+										<option>31 people</option>
+										<option>32 people</option>
+										<option>33 people</option>
+										<option>34 people</option>
+										<option>35 people</option>
+										<option>36 people</option>
+										<option>37 people</option>
+										<option>38 people</option>
+										<option>39 people</option>
+										<option>40 people</option>
+										<option>41 person</option>
+										<option>42 people</option>
+										<option>43 people</option>
+										<option>44 people</option>
+										<option>45 people</option>
+										<option>46 people</option>
+										<option>47 people</option>
+										<option>48 people</option>
+										<option>49 people</option>
+										<option>50 people</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<!-- Name -->
+								<span class="txt9">
+									Name
+								</span>
+
+								<div class="wrap-inputname size12 bo2 bo-rad-10 m-t-3 m-b-23">
+									<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="name" placeholder="Name">
+								</div>
+
+								<!-- Phone -->
+								<span class="txt9">
+									Phone
+								</span>
+
+								<div class="wrap-inputphone size12 bo2 bo-rad-10 m-t-3 m-b-23">
+									<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="phone" placeholder="Phone">
+								</div>
+
+								<!-- Email -->
+								<span class="txt9">
+									Email
+								</span>
+
+								<div class="wrap-inputemail size12 bo2 bo-rad-10 m-t-3 m-b-23">
+									<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="email" placeholder="Email">
+								</div>
+							</div>
+						</div>
+
+						<div class="wrap-btn-booking flex-c-m m-t-6">
+							<!-- Button3 -->
+							<button type="submit" class="btn3 flex-c-m size13 txt11 trans-0-4">
+								Book Table
+							</button>
+						</div>
+					</form>
+				</div>
+
+				<div class="col-lg-6 p-b-30 p-t-18">
+					<div class="wrap-pic-booking size2 bo-rad-10 hov-img-zoom m-l-r-auto">
+						<img src="images/booking-01.jpg" alt="IMG-OUR">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	
+
+	<!-- Review -->
+
+		
+	</section> 
+
+
+	
+
+
+	
+
+	<!-- Sign Up Section -->
+<div class="section-signup bg1-pattern p-t-85 p-b-85">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- Sign-up Form Column -->
+            <div class="col-md-6 col-lg-4">
+                <form class="text-center p-4 border rounded-3 bg-white shadow-sm">
+                    <!-- Heading -->
+                    <h2 class="txt5 mb-4">Specials Sign Up</h2>
+
+                    <!-- Email Input -->
+                    <div class="mb-3 position-relative">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input class="form-control bo-rad-10 p-l-20" type="email" name="email-address" id="email" placeholder="Email Address" required>
+                        <i class="fa fa-envelope position-absolute top-50 end-0 translate-middle-y m-r-3" aria-hidden="true"></i>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary w-100 mt-3">Sign-up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg1">
+    <div class="container p-t-40 p-b-70">
+        <div class="row">
+            <div class="col-sm-6 col-md-6s p-t-50">
+                <!-- - -->
+                <h4 class="txt13 m-b-33">
+                    Contact Us
+                </h4>
+
+                <ul class="m-b-70">
+                    <li class="txt14 m-b-14">
+                        <i class="fa fa-map-marker fs-16 dis-inline-block size19" aria-hidden="true"></i>
+                        Shop no 1, KP Square, Telco Rd, <br>
+                        Mohan Nagar, Pimpri-Chinchwad, <br>
+                        Pune,  Maharashtra 411019
+                    </li>
+
+                    <li class="txt14 m-b-14">
+                        <i class="fa fa-phone fs-16 dis-inline-block size19" aria-hidden="true"></i>
+                        +91 99211-83970
+                    </li>
+
+                    <li class="txt14 m-b-14">
+                        <i class="fa fa-envelope fs-13 dis-inline-block size19" aria-hidden="true"></i>
+                        vdivate03@gmail.com
+                    </li>
+                </ul>
+
+                <!-- - -->
+                <h4 class="txt13 m-b-32">
+                    Opening Times
+                </h4>
+
+    
+
+                <ul>
+                    <li class="txt14">
+                        10.00 AM – 11:00 PM
+                    </li>
+
+                    <li class="txt14">
+                        Every Day
+                    </li>
+                </ul>
+            </div>
+
+            
+
+            <div class="col-sm-6 col-md-6 p-t-50">
+                <!-- - -->
+                <h4 class="txt13 m-b-38">
+                    Gallery
+                </h4>
+
+                <!-- Gallery footer -->
+                <div class="wrap-gallery-footer flex-w">
+                    <a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-01.jpg" data-lightbox="gallery-footer">
+                        <img src="images/photo-gallery-thumb-01.jpg" alt="GALLERY">
+                    </a>
+
+                    <a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-02.jpg" data-lightbox="gallery-footer">
+                        <img src="images/photo-gallery-thumb-02.jpg" alt="GALLERY">
+                    </a>
+
+                    <a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-03.jpg" data-lightbox="gallery-footer">
+                        <img src="images/photo-gallery-thumb-03.jpg" alt="GALLERY">
+                    </a>
+
+                    <a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-04.jpg" data-lightbox="gallery-footer">
+                        <img src="images/photo-gallery-thumb-04.jpg" alt="GALLERY">
+                    </a>
+
+                    <a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-05.jpg" data-lightbox="gallery-footer">
+                        <img src="images/photo-gallery-thumb-05.jpg" alt="GALLERY">
+                    </a>
+
+                    <a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-06.jpg" data-lightbox="gallery-footer">
+                        <img src="images/photo-gallery-thumb-06.jpg" alt="GALLERY">
+                    </a>
+
+                    <a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-07.jpg" data-lightbox="gallery-footer">
+                        <img src="images/photo-gallery-thumb-07.jpg" alt="GALLERY">
+                    </a>
+
+                    <a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-08.jpg" data-lightbox="gallery-footer">
+                        <img src="images/photo-gallery-thumb-08.jpg" alt="GALLERY">
+                    </a>
+
+                    <a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-09.jpg" data-lightbox="gallery-footer">
+                        <img src="images/photo-gallery-thumb-09.jpg" alt="GALLERY">
+                    </a>
+
+                    <a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-10.jpg" data-lightbox="gallery-footer">
+                        <img src="images/photo-gallery-thumb-10.jpg" alt="GALLERY">
+                    </a>
+
+                    <a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-11.jpg" data-lightbox="gallery-footer">
+                        <img src="images/photo-gallery-thumb-11.jpg" alt="GALLERY">
+                    </a>
+
+                    <a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-12.jpg" data-lightbox="gallery-footer">
+                        <img src="images/photo-gallery-thumb-12.jpg" alt="GALLERY">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="end-footer bg2">
+        <div class="container">
+            <div class="flex-sb-m flex-w p-t-22 p-b-22">
+                <div class="p-t-5 p-b-5">
+                    <a href="https://wa.me/9921183970?text=Hello%20I%20am%20interested%20in%20your%20services!" target="_blank">
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.instagram.com/sahyadri_veg/profilecard/?igsh=MW5sZmk1N2h3czY5eg%3D%3D" target="_blank" class="fs-15 c-white"><i class="fa fa-facebook m-l-18" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/sahyadri_veg/profilecard/?igsh=MW5sZmk1N2h3czY5eg%3D%3D" target="_blank" class="fs-15 c-white"><i class="fa fa-instagram m-l-18" aria-hidden="true"></i></a>
+                </div>
+
+                <div class="txt17 p-r-20 p-t-5 p-b-5">
+                    Copyright &copy; 2025 All rights reserved  developed By Ganesha Vairagar.
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Go to whatsapp -->
+<div class="btn-back-to-top bg0-hov" id="myBtn">
+<a href="https://wa.me/9921183970?text=Hello%20I%20am%20interested%20in%20your%20services!" 
+   class="whatsapp-link" target="_blank" style="text-decoration: none; color: inherit;">
+    <span class="symbol-btn-back-to-top">
+        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+    </span>
+</a>
+</div>
+
+<!-- Modal Video 01-->
+<div class="modal fade" id="modal-video-01" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <div class="modal-dialog" role="document" data-dismiss="modal">
+        <div class="close-mo-video-01 trans-0-4" data-dismiss="modal" aria-label="Close">&times;</div>
+
+        <div class="wrap-video-mo-01">
+            <div class="w-full wrap-pic-w op-0-0"><img src="images/icons/video-16-9.jpg" alt="IMG"></div>
+            <div class="video-mo-01">
+                <iframe src="https://www.youtube.com/embed/5k1hSu2gdKE?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+	
+<!--===============================================================================================-->
+	<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
+	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="vendor/daterangepicker/moment.min.js"></script>
+	<script type="text/javascript" src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+	<script type="text/javascript" src="js/slick-custom.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="vendor/parallax100/parallax100.js"></script>
+	<script type="text/javascript">
+        $('.parallax100').parallax100();
+	</script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="vendor/lightbox2/js/lightbox.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
